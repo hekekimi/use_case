@@ -1,0 +1,81 @@
+
+
+
+@import url('https://fonts.cdnfonts.com/css/classica');
+
+
+
+
+body {
+    font-family: 'Classica', sans-serif;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background:linear-gradient(#73d376,#ccc);
+}
+
+
+
+.indexbody{
+    display: flex;
+}
+
+
+
+
+
+.login-container {
+    
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #2852c7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #51a3c9;
+}
+
+#info-message {
+    color: red;
+    margin-top: 10px;
+}
+#info-message.green{
+    color: #10c416;;
+}
+.topics{
+    
+    text-align: center;
+    
+}
+
+#pollCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+  
+}
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirjaudu sisään</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="indexbody">
+    <div class="login-container">
+        <h2>Äänestyssovellus</h2>
+        <h2>Kirjaudu sisään</h2>
+        <form id="login-form">
+            <label for="username">Käyttäjänimi:</label>
+            <input type="text" id="username" name="username" required >
+            <label for="password">Salasana:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Kirjaudu</button>
+            <p>tai</p>
+        </form>
+        <form id="registration_form">
+            <h2>Lisää käyttäjä</h2>
+            <label for="add_username">Käyttäjänimi:</label>
+            <input type="text" id="add_username" name="username" required >
+            <label for="new_password">Salasana:</label>
+            <input type="password" id="new_password" name="password" required >
+            <label for="role">Valitse rooli:</label>
+            <select id="role" required>
+                <option value="user">Käyttäjä</option>
+                <option value="admin">Ylläpitäjä</option>
+            </select>
+            <button type="submit">Lisää</button>
+        </form>
+
+
+
+
+
+
+
+            
+        </form>
+        <p id="info-message"></p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
