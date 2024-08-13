@@ -25,7 +25,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
         localStorage.setItem('loggedInUser', username);
 
         if(storedUsers[username].role == "user")
-            window.location.href = "user.html";
+            window.location.href = "user_erikois.html";
         else
             window.location.href = "admin.html";
         
