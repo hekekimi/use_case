@@ -46,7 +46,7 @@ document.getElementById("registration_form").addEventListener("submit", function
     
 
     if (storedUsers[newUsername]) {
-        alert("Käyttäjänimi on varattu, valitse toinen nimi");
+        infomessage.textContent = "Käyttäjänimi on varattu, valitse toinen nimi";
         //console.log(storedUsers);
     } else {
         storedUsers[newUsername] = { password: newPassword, role: role }; // Lisätään käyttäjä
@@ -55,7 +55,7 @@ document.getElementById("registration_form").addEventListener("submit", function
             infomessage.textContent = `Käyttäjä ${newUsername} rekisteröity onnistuneesti!`;
         }
         else{
-            infomessage.classList.add("ok-message");
+            infomessage.classList.add("green");
             infomessage.textContent =`Ylläpitäjä ${newUsername} rekisteröity onnistuneesti!`;
         }
         
