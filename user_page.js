@@ -162,7 +162,7 @@ function showResults() {
             results_button.innerHTML = "Katso tulokset";
         }
     } else {
-        alert("Valitse äänestys ja vaihtoehto nähdäksesi tulokset");
+        alert("Valitse äänestys ja jokin vaihtoehdoista nähdäksesi tulokset");
     }
 }
 
