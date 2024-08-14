@@ -244,9 +244,6 @@ document.querySelectorAll('.card').forEach(card => {
         this.classList.add('selected');
 
        
-        const radio = this.querySelector('input[type="radio"]');
-        if (radio) {
-            radio.checked = true;
-        }
+        
     });
 });
