@@ -39,9 +39,6 @@
 
 
 
-
- 
-
  // Käsittele äänestyksen luominen
  document.getElementById('createPollForm').addEventListener('submit', function(event) {
      event.preventDefault();
@@ -61,16 +58,6 @@
      updatePollList();
      document.getElementById('createPollForm').reset();
  });
-
-
-
-
-
-
-
-
-
-
 
 
  // Päivitä äänestyslista sivun latauksen yhteydessä
