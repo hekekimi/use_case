@@ -159,7 +159,7 @@ function showResults() {
             results_button.innerHTML = "Näytä / Piilota";
         } else {
             resultsContainer.style.display = 'none';
-            results_button.innerHTML = "Katso tulokset";
+            results_button.innerHTML = "Näytä / Piilota";
         }
     } else {
         alert("Valitse äänestys ja jokin vaihtoehdoista nähdäksesi tulokset");
