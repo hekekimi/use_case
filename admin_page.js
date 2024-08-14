@@ -49,10 +49,11 @@
      const question = document.getElementById('question').value;
      
      const options = [
-         document.getElementById('option1').value,
-         document.getElementById('option2').value,
-         document.getElementById('option3').value
-     ].filter(option => option); // Poistetaan tyhjät vaihtoehdot
+        document.getElementById('option1').value,
+        document.getElementById('option2').value,
+        document.getElementById('option3').value,
+        document.getElementById('option4').value,
+    ].filter(option => option); // Poistetaan tyhjät vaihtoehdot
 
      const newPoll = { question, options, votes: Array(options.length).fill(0) };
      polls.push(newPoll);
