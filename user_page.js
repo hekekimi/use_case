@@ -146,9 +146,9 @@ results_button.addEventListener("click", showResults);
 
 function showResults() {
     const selectedOption = document.querySelector('input[name="pollRadio"]:checked');
-    const selectedCard = document.querySelector('.card.selected');
+    
 
-    if (selectedOption || selectedCard) {
+    if (selectedOption) {
         const pollIndex = selectedOption.dataset.pollIndex;
         const card = selectedOption.closest('.card-body');
         const resultsContainer = card.querySelector('.results-container');
@@ -234,16 +234,3 @@ document.getElementById('randomizeVotesButton').addEventListener('click', functi
     
 });
 
-// kortin valinta
-document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', function() {
-        
-        document.querySelectorAll('.card').forEach(card => card.classList.remove('selected'));
-
-        // lisää valinta tähän korttiin
-        this.classList.add('selected');
-
-       
-        
-    });
-});
