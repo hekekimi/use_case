@@ -1,6 +1,32 @@
- // Lataa olemassa olevat äänestykset localStoragesta
- let polls = JSON.parse(localStorage.getItem('polls')) || [];
+//esimerkkiäänestykset
+const exaplePolls = [
+    {
+        question: "Lempivärisi?",
+        options: ["Punainen", "Sininen", "Vihreä","Keltainen"],
+        votes: [0, 0, 0, 0] // alustetaan äänet
+    },
+    {
+        question: "Paras ruoka?",
+        options: ["Pasta", "Pizza", "Lanttukukko","Silli ja uudet perunat"],
+        votes: [0, 0, 0, 0] 
+    },
+    {
+        question: "Paras automerkki?",
+        options: ["BMW","Mercedes-Benz","Audi","Joku muu A-B kulkuväline"],
+        votes: [0, 0, 0, 0] 
+    },
+    {
+        question: "Lempimusiikkisi?",
+        options: ["Rock","Metalli","Iskelmä","Senegalilainen fuusiojazz"],
+        votes: [0, 0, 0, 0] 
+    }
+];
 
+
+
+
+// käytetään valmiita esimerkkiäänestyksiä ja/tai paikallisesti käyttäjän luomia
+const polls = JSON.parse(localStorage.getItem('polls')) || exaplePolls;
  
  // Funktio äänestysten päivittämiseen käyttöliittymässä
  function updatePollList() {
