@@ -88,7 +88,3 @@ button:hover {
     background-color: rgb(81, 170, 197);
 }
 
-.card.selected {
-    border: 2px solid blue; /* Korostettu reuna */
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Korostettu varjo */
-}
