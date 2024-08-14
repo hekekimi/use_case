@@ -2,25 +2,30 @@
 const exaplePolls = [
     {
         question: "Lempivärisi?",
-        options: ["Punainen", "Sininen", "Vihreä"],
-        votes: [0, 0, 0] // Alustetaan äänet
+        options: ["Punainen", "Sininen", "Vihreä","Keltainen"],
+        votes: [0, 0, 0, 0] // alustetaan äänet
     },
     {
         question: "Paras ruoka?",
-        options: ["Pasta", "Pizza", "Lanttukukko"],
-        votes: [0, 0, 0] // Alustetaan äänet
+        options: ["Pasta", "Pizza", "Lanttukukko","Silli ja uudet perunat"],
+        votes: [0, 0, 0, 0] 
     },
     {
         question: "Paras automerkki?",
-        options: ["BMW","Mercedes-Benz","Joku muu katiska, esim. Renault"],
-        votes: [0, 0, 0] // Alustetaan äänet
+        options: ["BMW","Mercedes-Benz","Audi","Joku muu A-B kulkuväline"],
+        votes: [0, 0, 0, 0] 
+    },
+    {
+        question: "Lempimusiikkisi?",
+        options: ["Rock","Metalli","Iskelmä","Senegalilainen fuusiojazz"],
+        votes: [0, 0, 0, 0] 
     }
 ];
 
 
 
 
-// käytetään valmiita äänestyksiä ja/tai paikallisesti käyttäjän luomia
+// käytetään valmiita esimerkkiäänestyksiä ja/tai paikallisesti käyttäjän luomia
 const polls = JSON.parse(localStorage.getItem('polls')) || exaplePolls;
 
 
@@ -74,7 +79,7 @@ function updatePollCardsContainer() {
             card.appendChild(cardBody);
             pollCardsContainer.appendChild(card);
         });
-    } else {
+    } else { //jos äänestykisä ei ole
         alert("Tällä hetkellä ei ole yhtään avointa äänestystä!\n Ohjataan takaisin etusivulle.");
         setTimeout(function() {
             location.replace("index.html");
@@ -110,7 +115,7 @@ document.getElementById('voteForm').addEventListener('submit', function(event) {
         return;
     }
 
-    // Tarkista, onko käyttäjä jo äänestänyt tässä äänestyksessä
+    // tarkista, onko käyttäjä jo äänestänyt tässä äänestyksessä
     if (userVotes[loggedInUser] && userVotes[loggedInUser][pollIndex]) {
         alert('Olet jo äänestänyt tässä äänestyksessä!');
         return;
@@ -161,7 +166,7 @@ function showResults() {
 }
 
 function updateResultsList(pollIndex, resultsContainer) {
-    // Tyhjennetään resultsContainer, jotta uudet tulokset voidaan lisätä
+    
     resultsContainer.innerHTML = '';
     
     // Haetaan kyseinen äänestys polls-taulukosta pollIndex:n perusteella
@@ -178,40 +183,40 @@ function updateResultsList(pollIndex, resultsContainer) {
         // Lasketaan prosenttiosuus kyseiselle vaihtoehdolle (kuinka monta prosenttia kaikista äänistä)
         const percentage = totalVotes ? Math.round((votes / totalVotes) * 100) : 0;
         
-        // Luodaan kontti, johon lisätään progress bar ja label (teksti)
+        
         const progressBarContainer = document.createElement('div');
-        progressBarContainer.className = 'mb-2';  // marginaali alhaalla
+        progressBarContainer.className = 'mb-2';  
 
-        // Luodaan label, joka näyttää vaihtoehdon nimen, äänimäärän ja prosenttiosuuden
+        // vaihtoehdon nimi, äänimäärä ja prosenttiosuus
         const label = document.createElement('div');
         label.textContent = `${option}: ${votes} ääntä (${percentage}%)`;
-        label.className = 'small mb-1';  // pieni fontti ja marginaali alhaalla
+        label.className = 'small mb-1';  
 
-        // Luodaan progress barin pääkontti
+       
         const progress = document.createElement('div');
         progress.className = 'progress';
 
-        // Luodaan progress bar, joka näyttää äänten prosenttiosuuden
+        // progress bar, joka näyttää äänten prosenttiosuuden
         const progressBar = document.createElement('div');
         progressBar.className = 'progress-bar progress-bar-striped bg-success';
-        progressBar.style.width = `${percentage}%`;  // asettaa leveys prosenttiosuuden mukaan
+        progressBar.style.width = `${percentage}%`;  // aseta leveys prosenttiosuuden mukaan
         
-        progressBar.setAttribute('aria-valuenow', percentage);  // Arvot WCAG-yhteensopivuuden vuoksi
+        progressBar.setAttribute('aria-valuenow', percentage);  
         progressBar.setAttribute('aria-valuemin', '0');
         progressBar.setAttribute('aria-valuemax', '100');
 
-        // Liitetään progress bar sen pääkonttiin
+       
         progress.appendChild(progressBar);
         
-        // Liitetään label ja progress bar kontteihin
+        
         progressBarContainer.appendChild(label);
         progressBarContainer.appendChild(progress);
 
-        // Lopuksi lisätään koko progress bar -kontti resultsContaineriin
+        
         resultsContainer.appendChild(progressBarContainer);
     });
 
-    // Näytetään tulokset (jos ne olivat aiemmin piilotettu)
+    // Näytetään tulokset 
     resultsContainer.style.display = 'block';
 }
 
@@ -219,11 +224,11 @@ function updateResultsList(pollIndex, resultsContainer) {
 // Päivitä kortit sivun latauksen yhteydessä
 updatePollCardsContainer();
 
-document.getElementById('randomizeVotesButton').addEventListener('click', function() {
+document.getElementById('randomizeVotesButton').addEventListener('click', function() { //satunnaisia ääniä voidaan lisätä napilla
     polls.forEach(poll => {
-        poll.votes = poll.votes.map(() => Math.floor(Math.random() * 100)); // Lisää satunnaiset äänet
+        poll.votes = poll.votes.map(() => Math.floor(Math.random() * 100)); 
     });
-    localStorage.setItem('polls', JSON.stringify(polls)); // Tallennetaan randomisoidut äänet localStorageen
+    localStorage.setItem('polls', JSON.stringify(polls)); 
     updatePollCardsContainer(); // Päivitä käyttöliittymä
     
 });
