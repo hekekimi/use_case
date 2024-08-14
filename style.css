@@ -51,6 +51,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-left: 30px;
 }
 
 label {
@@ -67,20 +68,6 @@ input[type="text"], input[type="password"], select {
     box-sizing: border-box;
 }
 
-button {
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
 
 p {
     text-align: center;
@@ -146,9 +133,7 @@ button:hover {
     background-color: rgb(81, 170, 197);
 }
 
-form{
-    margin-left: 30px;
-}
+
 
 h2{
     text-align: center;
