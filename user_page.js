@@ -12,7 +12,8 @@ const exaplePolls = [
     },
     {
         question: "Paras automerkki?",
-        options: ["BMW","Mercedes-Benz","Joku muu katiska, esim. Renault"]
+        options: ["BMW","Mercedes-Benz","Joku muu katiska, esim. Renault"],
+        votes: [0, 0, 0] // Alustetaan äänet
     }
 ];
 
